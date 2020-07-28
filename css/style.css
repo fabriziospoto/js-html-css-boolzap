@@ -41,19 +41,47 @@ aside {
 .avatar-utente {
     width: 100%;
     height: 70px;
-    background-color: lightblue;
+    background-color: #eaeaea;
+    display: flex;
+}
+
+.avatar-w {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.avatar-w img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 15px;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.menu i {
+    font-size: 20px;
+    color: grey;
+    margin-right: 15px;
 }
 
 .notifiche {
     width: 100%;
     height: 70px;
-    background-color: grey;
+    background-color: #8edafc;
 }
 
 .ricerca {
     width: 100%;
     height: 40px;
-    background-color: lightgreen;
+    background-color: #fafafa;
 }
 
 .contatti {
@@ -72,18 +100,22 @@ main  {
 .avatar-conv {
     width: 100%;
     height: 70px;
-    background-color: lightblue;
+    background-color: #eaeaea;
 }
 
 .conversazione {
     width: 100%;
     height: calc(100% - 140px);
-    background-color: tomato;
+    background-image: url('https://i.redd.it/qwd83nc4xxf41.jpg');
+    filter: contrast(70%);
+    background-position: top;
+    background-repeat: repeat;
+    background-size: contain;
     overflow-y: scroll;
 }
 
 .input-mex {
     width: 100%;
     height: 70px;
-    background-color: darkkhaki;
+    background-color: #f3eeea;
 }
