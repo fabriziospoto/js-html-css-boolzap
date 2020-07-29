@@ -8,7 +8,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="stylesheet" href="css/style.css">
         <!-- CANCELLARE All'occorrenza aggiungere Bootstrap e/o Google Font -->
-        <title></title>
+        <title>js-html-css-boolzap</title>
     </head>
     <body>
         <div class="container">
@@ -116,10 +116,10 @@
                 <main class="">
                     <div class="avatar-conv">
                         <div class="av-left">
-                            <img class="avatar-measures" src="Avatar\Avatar.8.png" alt="Avatar.2">
+                            <img class="avatar-measures" src="Avatar\Avatar.5.png" alt="Avatar.2">
                         </div>
                         <div class="av-center">
-                            <p>Fabio</p>
+                            <p>Giulia</p>
                             <p id="av-center-p">Ultimo accesso oggi alle</p>
                         </div>
                         <div class="av-right">
@@ -130,18 +130,48 @@
                     </div>
                     <div class="conversazione">
 
+                        <div id="mandato" class="message sent sent-jq">
+                            <div class="mex-top">
+                                <p class="mex-text">Ciao, come stai?</p>
+                            </div>
+                            <div class="mex-bottom">
+                                <p class="mex-time">10.40</p>
+                            </div>
+                        </div>
+
+                        <div id="ricevuto" class="message received">
+                            <div class="mex-top">
+                                <p class="mex-text">Bene, grazie!</p>
+                            </div>
+                            <div class="mex-bottom">
+                                <p class="mex-time">10.40</p>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="input-mex">
                         <div class="mex-left">
                             <i class="far fa-smile"></i>
                         </div>
                         <div class="mex-center">
-                            <input type="text" name="" value="" placeholder="Scrivi un messaggio...">
+                            <input id="send-text" type="text" name="" value="" placeholder="Scrivi un messaggio...">
                         </div>
                         <div class="mex-right">
-                            <i class="fas fa-microphone"></i>
+                            <i id="mic" class="fas fa-microphone"></i>
                         </div>
                     </div>
+                    <!-- TEMPLATE -->
+                    <div class="template">
+                        <div class="message">
+                            <div class="mex-top">
+                                <p class="mex-text"></p>
+                            </div>
+                            <div class="mex-bottom">
+                                <p class="mex-time"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FINE TEMPLATE -->
                 </main>
             </div>
 
