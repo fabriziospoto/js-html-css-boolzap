@@ -18,6 +18,11 @@ $('#send-text').keypress(function(event) {    // intercetto il tasto INVIO
     }
 });
 
+//***************contatti
+// $('.c-box').click(function() {
+//     richiamo();
+// });
+
 //***************FUNZIONI
 function manda(){
     var valore = $('#send-text').val(); //prendo valore input
@@ -52,3 +57,12 @@ function risposta() {
 function scroll() {
     $(".conversazione").scrollTop($(".conversazione")[0].scrollHeight);
 }
+
+// function richiamo() {
+//     var posizione = $(this).index();
+//     $('.contatti .c-box').removeClass('active');
+//     $('.conversazione').removeClass('active');
+//     $('.conversazione').eq(posizione).addClass('active');
+//
+//     $('.contatti .c-box').eq(posizione).addClass('active');
+// }

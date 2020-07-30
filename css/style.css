@@ -260,12 +260,16 @@ main  {
     width: 100%;
     height: calc(100% - 140px);
     background-image: url('https://i.redd.it/qwd83nc4xxf41.jpg');
-    /* filter: contrast(70%); */
     background-position: top;
     background-repeat: repeat;
     background-size: contain;
     overflow-y: scroll;
+    /* display: none; */
 }
+
+/* .active {
+    display: block;
+} */
 
 .input-mex {
     width: 100%;
