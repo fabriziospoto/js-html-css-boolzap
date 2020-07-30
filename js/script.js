@@ -29,11 +29,16 @@ function manda(){
     var valore = $('#send-text').val(); //prendo valore input
 
     var elemento2 = $('.template .message').clone();
+
     var el = elemento2.children('.mex-top');
     el.children('.mex-text').text(valore); //Personalizzo clone
     elemento2.addClass('sent');
-
     $('.conversazione').append(elemento2); //aggiungo clone input
+
+    var ora = numeriRandom(0, 23);
+    var minuti = numeriRandom(0, 60);
+
+    $('.sent .mex-time').text(ora + '.' + minuti);
 }
 
 function risposta() {
@@ -47,7 +52,12 @@ function risposta() {
         $('.conversazione').append(elemento3);
         i++;
     }
+    var ora = numeriRandom(0, 23);
+    var minuti = numeriRandom(0, 60);
+
+    $('.received .mex-time').text(ora + '.' + minuti);
 }
+
 function numeriRandom(min,max){
     return Math.floor(Math.random()*(max - min + 1) + min);
 }
