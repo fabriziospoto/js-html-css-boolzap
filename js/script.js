@@ -1,3 +1,4 @@
+// RISPOSTE RANDOM
 var listaRisp = [
     "Mi è sembrato di vedere un gatto.",
     "Parto a metà agosto.",
@@ -7,6 +8,7 @@ var listaRisp = [
     "Ich spreche kein Italienisch."
 ];
 
+// INVIO
 $('#mic').click(function() {
     manda();
 });
@@ -16,6 +18,7 @@ $('#send-text').keypress(function(event) {    // intercetto il tasto INVIO
     }
 });
 
+// RICEZIONE
 $('#mic').click(function() {
     setTimeout(risposta, 1500);
 });
@@ -25,6 +28,7 @@ $('#send-text').keypress(function(event) {    // intercetto il tasto INVIO
     }
 });
 
+//***************FUNZIONI
 function manda(){
     var valore = $('#send-text').val(); //prendo valore input
 
@@ -34,11 +38,11 @@ function manda(){
     el.children('.mex-text').text(valore); //Personalizzo clone
     elemento2.addClass('sent');
     $('.conversazione').append(elemento2); //aggiungo clone input
+    scroll();
+    // var ora = numeriRandom(0, 23);
+    // var minuti = numeriRandom(0, 60);
 
-    var ora = numeriRandom(0, 23);
-    var minuti = numeriRandom(0, 60);
-
-    $('.sent .mex-time').text(ora + '.' + minuti);
+    //$('.sent .mex-time').text(ora + '.' + minuti);
 }
 
 function risposta() {
@@ -50,14 +54,19 @@ function risposta() {
         el2.children('.mex-text').text(listaRisp[indice]);
         elemento3.addClass('received');
         $('.conversazione').append(elemento3);
+        scroll();
         i++;
     }
-    var ora = numeriRandom(0, 23);
-    var minuti = numeriRandom(0, 60);
+    // var ora = numeriRandom(0, 23);
+    // var minuti = numeriRandom(0, 60);
 
-    $('.received .mex-time').text(ora + '.' + minuti);
+    // $('.received .mex-time').text(ora + '.' + minuti);
 }
 
 function numeriRandom(min,max){
     return Math.floor(Math.random()*(max - min + 1) + min);
+}
+
+function scroll() {
+    $(".conversazione").scrollTop($(".conversazione")[0].scrollHeight);
 }
