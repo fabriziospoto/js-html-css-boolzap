@@ -264,12 +264,12 @@ main  {
     background-repeat: repeat;
     background-size: contain;
     overflow-y: scroll;
-    /* display: none; */
+    display: none;
 }
 
-/* .active {
+.active {
     display: block;
-} */
+}
 
 .input-mex {
     width: 100%;
@@ -323,10 +323,11 @@ main  {
 
 .message {
     width: 150px;
-    height: 70px;
+    height: auto;
     border-radius: 5px;
     margin: 10px 50px;
     padding: 8px;
+    word-wrap: break-word;
 }
 
 .mex-top {

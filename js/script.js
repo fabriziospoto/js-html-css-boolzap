@@ -10,17 +10,32 @@ $('#send-text').keypress(function(event) {    // intercetto il tasto INVIO
 
 //***********************RICEZIONE
 $('#mic').click(function() {
-    setTimeout(risposta, 1500);
+    setTimeout(risposta, 1000);
 });
 $('#send-text').keypress(function(event) {    // intercetto il tasto INVIO
     if(event.which == 13) {
-        setTimeout(risposta, 1500);
+        setTimeout(risposta, 1000);
     }
 });
 
-//***************contatti
+//***************RICHIAMO CHAT
+$(document).on('click', '.c-box', function() {
+    // richiamo();
+    var posizione = $(this).index();
+    console.log(posizione);
+    $('.contatti .c-box').removeClass('active');
+    $('main .conversazione').removeClass('active');
+
+    $('main .conversazione').eq(posizione).addClass('active');
+    $('.contatti .c-box').eq(posizione).addClass('active');
+});
+
+//***************RICHIAMO DATI CONTATTO
 // $('.c-box').click(function() {
-//     richiamo();
+//     var nomeContatto = $('#av-dato').attr();
+//     var dato = document.getElementById('nome');
+//     console.log(dati);
+//     nomeContatto.text(dato);
 // });
 
 //***************FUNZIONI
@@ -30,12 +45,12 @@ function manda(){
     var el = elemento2.children('.mex-top');
     el.children('.mex-text').text(valore); //Personalizzo clone
     elemento2.addClass('sent');
-    $('.conversazione').append(elemento2); //aggiungo clone input
-    scroll();
+    $('.conversazione.active').append(elemento2); //aggiungo clone input
+    // scroll();
 
     var datetime = new Date();  // Imposto ora
-    var ora = datetime.getHours();
-    var minutes = datetime.getMinutes();
+    var ora = addZero(datetime.getHours());
+    var minutes = addZero(datetime.getMinutes());
     $('.sent .mex-time').text(ora + '.' + minutes);
 
 }
@@ -45,24 +60,24 @@ function risposta() {
     var el2 = elemento3.children('.mex-top');
     el2.children('.mex-text').text('Ok');
     elemento3.addClass('received');
-    $('.conversazione').append(elemento3);
-    scroll();
+    $('.conversazione.active').append(elemento3);
+    // scroll();
 
     var datetime = new Date();  // Imposto ora
-    var ora = datetime.getHours();
-    var minutes = datetime.getMinutes();
+    var ora = addZero(datetime.getHours());
+    var minutes = addZero(datetime.getMinutes());
     $('.received .mex-time').text(ora + '.' + minutes);
+    console.log(datetime);
 }
 
 function scroll() {
     $(".conversazione").scrollTop($(".conversazione")[0].scrollHeight);
 }
 
-// function richiamo() {
-//     var posizione = $(this).index();
-//     $('.contatti .c-box').removeClass('active');
-//     $('.conversazione').removeClass('active');
-//     $('.conversazione').eq(posizione).addClass('active');
-//
-//     $('.contatti .c-box').eq(posizione).addClass('active');
-// }
+
+function addZero(numero) {
+    if (numero < 10) {
+        return '0' + numero;
+    }
+    return numero
+}
