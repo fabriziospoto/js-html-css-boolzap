@@ -28,15 +28,18 @@ $(document).on('click', '.c-box', function() {
 
     $('main .conversazione').eq(posizione).addClass('active');
     $('.contatti .c-box').eq(posizione).addClass('active');
+
+    var dato = document.getElementsByClassName('nome');
+
+    var n = $(this).find('.nome').text();
+    console.log(n);
+    $('#av-dato').text(n);
+
+    var f = $(this).find('.avatar-measures').attr('src');
+    console.log(f);
+    $('#av-js').attr('src', f);
 });
 
-//***************RICHIAMO DATI CONTATTO
-// $('.c-box').click(function() {
-//     var nomeContatto = $('#av-dato').attr();
-//     var dato = document.getElementById('nome');
-//     console.log(dati);
-//     nomeContatto.text(dato);
-// });
 
 //***************FUNZIONI
 function manda(){
