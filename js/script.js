@@ -18,6 +18,11 @@ $('#send-text').keypress(function(event) {    // intercetto il tasto INVIO
     }
 });
 
+//***********************RICERCA CONTATTI
+$('#cerca').keyup(function(){
+  ricercaContatto();
+});
+
 //***************RICHIAMO CHAT
 $(document).on('click', '.c-box', function() {
     // richiamo();
@@ -84,3 +89,16 @@ function addZero(numero) {
     }
     return numero
 }
+
+function ricercaContatto() {
+    var input = $('#cerca').val();
+    var contatti = $('.c-box');
+    contatti.each(function(){
+        var cerca = $(this).find('.nome').text();
+        if (cerca.toLowerCase().includes(input.toLowerCase())) {
+        $(this).show();
+        } else {
+        $(this).hide();
+        }
+    })
+  }
